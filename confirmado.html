@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Correo confirmado — Halobra</title>
+<style>
+  :root {
+    --azul: #0F2942;
+    --naranja: #F26522;
+    --verde: #16A34A;
+    --gris: #5A6675;
+    --linea: #E4E8EC;
+    --fondo: #FFFFFF;
+    --texto: #1E2A38;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--texto);
+    background: var(--fondo);
+    line-height: 1.65;
+  }
+  header {
+    background: var(--azul);
+    color: #fff;
+    padding: 40px 24px 32px;
+  }
+  header .wrap { max-width: 560px; margin: 0 auto; }
+  header .brand {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  header .brand span { color: var(--naranja); }
+  main {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+    text-align: center;
+  }
+  .check {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--verde);
+    color: #fff;
+    font-size: 40px;
+    line-height: 72px;
+    margin: 0 auto 28px;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 14px;
+    color: var(--azul);
+    font-weight: 700;
+  }
+  p { font-size: 17px; color: var(--gris); margin: 0 0 14px; }
+  .destacado { color: var(--texto); font-weight: 600; }
+  footer {
+    border-top: 1px solid var(--linea);
+    padding: 28px 24px;
+    text-align: center;
+    color: var(--gris);
+    font-size: 14px;
+  }
+  footer .brand { font-weight: 700; color: var(--azul); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">HALO<span>BRA</span></div>
+  </div>
+</header>
+
+<main>
+  <div class="check">&#10003;</div>
+  <h1>Correo confirmado</h1>
+  <p class="destacado">Tu cuenta de Halobra ya esta lista.</p>
+  <p>Vuelve a la aplicacion y entra con tu correo y tu contrasena.</p>
+  <p>Ya puedes cerrar esta pagina.</p>
+</main>
+
+<footer>
+  <span class="brand">Halobra</span> — Presupuestos para contratistas.<br>
+  &copy; 2026 Halobra.
+</footer>
+</body>
+</html>
