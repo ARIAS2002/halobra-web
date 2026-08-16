@@ -1,294 +1,271 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Service — Halobra</title>
+<title>Términos de servicio — Halobra</title>
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#071726">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --azul: #0F2942;
-    --naranja: #F26522;
-    --gris: #5A6675;
-    --linea: #E4E8EC;
-    --fondo: #FFFFFF;
-    --texto: #1E2A38;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--texto);
-    background: var(--fondo);
-    line-height: 1.65;
-  }
-  header {
-    background: var(--azul);
-    color: #fff;
-    padding: 40px 24px 32px;
-  }
-  header .wrap { max-width: 760px; margin: 0 auto; }
-  header .brand {
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-  }
-  header .brand span { color: var(--naranja); }
-  header h1 {
-    font-size: 30px;
-    margin: 18px 0 6px;
-    font-weight: 700;
-  }
-  header .updated {
-    font-size: 14px;
-    color: #A9B6C4;
-    margin: 0;
-  }
-  main {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-  }
-  main p, main li { font-size: 16px; }
-  h2 {
-    font-size: 20px;
-    margin: 38px 0 12px;
-    color: var(--azul);
-    border-bottom: 2px solid var(--linea);
-    padding-bottom: 8px;
-  }
-  h3 {
-    font-size: 16px;
-    margin: 22px 0 6px;
-    color: var(--azul);
-  }
-  ul { padding-left: 22px; }
-  li { margin-bottom: 8px; }
-  a { color: var(--naranja); }
-  .intro {
-    font-size: 17px;
-    color: var(--gris);
-  }
-  .callout {
-    background: #F7F9FB;
-    border-left: 4px solid var(--naranja);
-    padding: 16px 18px;
-    border-radius: 6px;
-    margin: 20px 0;
-    font-size: 15px;
-  }
-  footer {
-    border-top: 1px solid var(--linea);
-    padding: 28px 24px;
-    text-align: center;
-    color: var(--gris);
-    font-size: 14px;
-  }
-  footer .brand { font-weight: 700; color: var(--azul); }
+:root{
+  --fondo:#071726;--fondo-2:#0A1E31;--navy:#0F2942;--naranja:#F26522;
+  --claro:#E8EEF4;--tenue:#8FA2B5;--borde:rgba(255,255,255,.10);--borde-fuerte:rgba(255,255,255,.20);
+  --display:"Archivo",system-ui,sans-serif;--cuerpo:"Source Sans 3",system-ui,sans-serif;--dato:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--fondo);color:var(--claro);font-family:var(--cuerpo);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+.columna{max-width:780px;margin:0 auto;padding:0 24px;}
+a{color:var(--naranja);}
+:focus-visible{outline:3px solid var(--naranja);outline-offset:3px;border-radius:4px;}
+
+.barra{position:sticky;top:0;z-index:40;background:rgba(7,23,38,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--borde);}
+.barra .wrap{display:flex;align-items:center;gap:22px;height:66px;}
+.marca{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:1.6px;color:#fff;text-decoration:none;margin-right:auto;}
+.marca em{color:var(--naranja);font-style:normal;}
+.volver{color:var(--tenue);text-decoration:none;font-size:14.5px;font-weight:600;}
+.volver:hover{color:#fff;}
+.idioma{display:flex;border:1px solid var(--borde-fuerte);border-radius:999px;overflow:hidden;}
+.idioma button{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:1px;padding:6px 12px;border:0;background:transparent;color:var(--tenue);cursor:pointer;}
+.idioma button[aria-pressed="true"]{background:var(--naranja);color:#fff;}
+
+.cabeza{position:relative;padding:64px 0 52px;overflow:hidden;border-bottom:1px solid var(--borde);}
+.cabeza::before{content:"";position:absolute;inset:0;background:radial-gradient(66% 60% at 18% 0%,rgba(23,57,90,.8) 0%,transparent 64%);pointer-events:none;}
+.cabeza .columna{position:relative;}
+.rotulo{font-family:var(--display);font-size:11.5px;font-weight:700;letter-spacing:2.6px;color:var(--naranja);margin:0 0 12px;}
+.cabeza h1{font-family:var(--display);font-weight:800;font-size:clamp(31px,4.6vw,46px);letter-spacing:-1px;line-height:1.08;margin:0 0 10px;}
+.fecha{font-family:var(--dato);font-size:13.5px;color:var(--tenue);margin:0;}
+
+.legal{padding:44px 0 92px;}
+.legal h2{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.2px;color:#fff;margin:44px 0 12px;padding-bottom:10px;border-bottom:1px solid var(--borde);}
+.legal p,.legal li{font-size:16.5px;color:#CFDAE4;}
+.legal ul{padding-left:22px;}
+.legal li{margin-bottom:9px;}
+.entrada{font-size:18px;color:var(--tenue);}
+.aviso{background:rgba(242,101,34,.07);border:1px solid rgba(242,101,34,.28);border-left:3px solid var(--naranja);border-radius:11px;padding:20px 22px;margin:26px 0;}
+.aviso p{margin:0;font-size:16px;}
+.aviso strong{color:#fff;}
+.correo{font-family:var(--dato);font-size:18px;}
+
+.pie{background:#050F1A;border-top:1px solid var(--borde);padding:42px 0;font-size:14.5px;color:var(--tenue);}
+.pie .wrap{display:flex;flex-wrap:wrap;gap:13px 26px;align-items:center;}
+.pie a{color:#B9C7D4;text-decoration:none;}
+.pie a:hover{color:#fff;text-decoration:underline;}
+.pie .derechos{margin-left:auto;}
+
+@media(max-width:560px){
+  .volver{display:none;}
+  .pie .derechos{margin-left:0;width:100%;}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 </style>
 </head>
 <body>
-<header>
+
+<nav class="barra">
   <div class="wrap">
-    <div class="brand">HALO<span>BRA</span></div>
-    <h1>Terms of Service</h1>
-    <p class="updated">Last updated: July 30, 2026</p>
+    <a class="marca" href="index.html">HALO<em>BRA</em></a>
+    <a class="volver" href="index.html" data-es="&larr; Inicio" data-en="&larr; Home">&larr; Inicio</a>
+    <div class="idioma" role="group" aria-label="Idioma / Language">
+      <button type="button" data-set="es" aria-pressed="true">ES</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="cabeza">
+  <div class="columna">
+    <p class="rotulo" data-es="LEGAL" data-en="LEGAL">LEGAL</p>
+    <h1 data-es="Términos de servicio" data-en="Terms of Service">Términos de servicio</h1>
+    <p class="fecha" data-es="Última actualización: 30 de julio de 2026" data-en="Last updated: July 30, 2026">Última actualización: 30 de julio de 2026</p>
   </div>
 </header>
 
-<main>
-  <p class="intro">
-    These Terms of Service ("Terms") govern your use of the Halobra mobile
-    application and related services (together, the "Service"), provided by
-    Halobra ("we," "us," or "our"). Please read these Terms carefully. By
-    creating an account or using the Service, you agree to be bound by these
-    Terms. If you do not agree, do not use the Service.
-  </p>
+<main class="legal">
+  <div class="columna">
 
-  <div class="callout">
-    <strong>The short version:</strong> Halobra is a tool that helps you create
-    and share estimates. You are responsible for the content of your estimates
-    and for your work with your clients. Halobra is not a party to any agreement
-    between you and your clients. The Service is provided "as is," and some
-    features may require a paid subscription.
+    <p class="entrada"
+       data-es="Estos Términos de servicio (los &laquo;Términos&raquo;) rigen tu uso de la aplicación móvil Halobra y los servicios relacionados (en conjunto, el &laquo;Servicio&raquo;), proporcionados por Halobra (&laquo;nosotros&raquo;). Léelos con atención. Al crear una cuenta o usar el Servicio, aceptas quedar obligado por estos Términos. Si no estás de acuerdo, no uses el Servicio."
+       data-en="These Terms of Service (the &ldquo;Terms&rdquo;) govern your use of the Halobra mobile application and related services (together, the &ldquo;Service&rdquo;), provided by Halobra (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). Please read them carefully. By creating an account or using the Service, you agree to be bound by these Terms. If you do not agree, do not use the Service.">
+      Estos Términos de servicio (los &laquo;Términos&raquo;) rigen tu uso de la aplicación móvil Halobra y los servicios relacionados (en conjunto, el &laquo;Servicio&raquo;), proporcionados por Halobra (&laquo;nosotros&raquo;). Léelos con atención. Al crear una cuenta o usar el Servicio, aceptas quedar obligado por estos Términos. Si no estás de acuerdo, no uses el Servicio.
+    </p>
+
+    <div class="aviso">
+      <p data-es="<strong>En corto:</strong> Halobra es una herramienta que te ayuda a crear y compartir presupuestos. Tú eres responsable del contenido de tus presupuestos y de tu trabajo con tus clientes. Halobra no es parte de ningún acuerdo entre tú y tus clientes. El Servicio se ofrece &laquo;tal cual&raquo; y algunas funciones requieren una suscripción de pago."
+         data-en="<strong>The short version:</strong> Halobra is a tool that helps you create and share estimates. You are responsible for the content of your estimates and for your work with your clients. Halobra is not a party to any agreement between you and your clients. The Service is provided &ldquo;as is,&rdquo; and some features require a paid subscription.">
+        <strong>En corto:</strong> Halobra es una herramienta que te ayuda a crear y compartir presupuestos. Tú eres responsable del contenido de tus presupuestos y de tu trabajo con tus clientes. Halobra no es parte de ningún acuerdo entre tú y tus clientes. El Servicio se ofrece &laquo;tal cual&raquo; y algunas funciones requieren una suscripción de pago.
+      </p>
+    </div>
+
+    <h2 data-es="1. Aceptación de estos Términos" data-en="1. Acceptance of these Terms">1. Aceptación de estos Términos</h2>
+    <p data-es="Al acceder o usar el Servicio, confirmas que has leído, entendido y aceptado estos Términos y nuestra <a href=&quot;privacy.html&quot;>Política de privacidad</a>, que se incorpora aquí por referencia. Podemos actualizar estos Términos periódicamente, según se describe en la sección &laquo;Cambios en estos Términos&raquo;."
+       data-en="By accessing or using the Service, you confirm that you have read, understood, and agree to these Terms and to our <a href=&quot;privacy.html&quot;>Privacy Policy</a>, which is incorporated here by reference. We may update these Terms from time to time, as described in the &ldquo;Changes to these Terms&rdquo; section below.">
+      Al acceder o usar el Servicio, confirmas que has leído, entendido y aceptado estos Términos y nuestra <a href="privacy.html">Política de privacidad</a>, que se incorpora aquí por referencia. Podemos actualizar estos Términos periódicamente, según se describe en la sección &laquo;Cambios en estos Términos&raquo;.
+    </p>
+
+    <h2 data-es="2. Qué es Halobra" data-en="2. What Halobra is">2. Qué es Halobra</h2>
+    <p data-es="Halobra es una herramienta de software que ayuda a crear, valorar y compartir presupuestos profesionales. Halobra proporciona únicamente la herramienta. Genera documentos a partir de la información que tú introduces. Halobra no ejecuta trabajos de construcción, no fija tus precios, no verifica la exactitud de ningún presupuesto y no garantiza ningún resultado comercial."
+       data-en="Halobra is a software tool that helps users create, price, and share professional estimates. Halobra provides the tool only. It generates documents based on the information you provide. Halobra does not perform contracting work, does not set prices for you, does not verify the accuracy of any estimate, and does not guarantee any business result.">
+      Halobra es una herramienta de software que ayuda a crear, valorar y compartir presupuestos profesionales. Halobra proporciona únicamente la herramienta. Genera documentos a partir de la información que tú introduces. Halobra no ejecuta trabajos de construcción, no fija tus precios, no verifica la exactitud de ningún presupuesto y no garantiza ningún resultado comercial.
+    </p>
+
+    <h2 data-es="3. Quién puede usarlo" data-en="3. Eligibility">3. Quién puede usarlo</h2>
+    <p data-es="Debes tener al menos 18 años y capacidad para celebrar un contrato vinculante. El Servicio está destinado a uso profesional y comercial. No está dirigido a menores y no permitimos a sabiendas que personas menores de 18 años lo usen."
+       data-en="You must be at least 18 years old and able to form a binding contract to use the Service. The Service is intended for professional and business use. It is not directed to children, and we do not knowingly allow anyone under 18 to use it.">
+      Debes tener al menos 18 años y capacidad para celebrar un contrato vinculante. El Servicio está destinado a uso profesional y comercial. No está dirigido a menores y no permitimos a sabiendas que personas menores de 18 años lo usen.
+    </p>
+
+    <h2 data-es="4. Tu cuenta" data-en="4. Your account">4. Tu cuenta</h2>
+    <ul>
+      <li data-es="Eres responsable de mantener seguras tus credenciales y de toda la actividad que ocurra en tu cuenta."
+          data-en="You are responsible for keeping your account credentials secure and for all activity that occurs under your account.">Eres responsable de mantener seguras tus credenciales y de toda la actividad que ocurra en tu cuenta.</li>
+      <li data-es="Aceptas dar información veraz al registrarte y mantenerla actualizada."
+          data-en="You agree to provide accurate information when you register and to keep it up to date.">Aceptas dar información veraz al registrarte y mantenerla actualizada.</li>
+      <li data-es="Avísanos de inmediato si crees que alguien accedió a tu cuenta sin tu permiso."
+          data-en="Notify us promptly if you believe your account has been accessed without your permission.">Avísanos de inmediato si crees que alguien accedió a tu cuenta sin tu permiso.</li>
+    </ul>
+
+    <h2 data-es="5. Tu contenido y tu responsabilidad" data-en="5. Your content and your responsibility">5. Tu contenido y tu responsabilidad</h2>
+    <p data-es="Eres el único responsable de toda la información que introduces en el Servicio y de cada presupuesto, precio, cantidad, alcance de trabajo, término, nota y documento que crees, generes, firmes o compartas usando el Servicio. Esto incluye asegurarte de que:"
+       data-en="You are solely responsible for all information you enter into the Service and for every estimate, price, quantity, scope of work, term, note, and document you create, generate, sign, or share using the Service. This includes ensuring that:">
+      Eres el único responsable de toda la información que introduces en el Servicio y de cada presupuesto, precio, cantidad, alcance de trabajo, término, nota y documento que crees, generes, firmes o compartas usando el Servicio. Esto incluye asegurarte de que:
+    </p>
+    <ul>
+      <li data-es="Tus precios, cálculos, cantidades y alcance de trabajo son correctos y apropiados para el trabajo."
+          data-en="Your prices, calculations, quantities, and scope of work are correct and appropriate for the job.">Tus precios, cálculos, cantidades y alcance de trabajo son correctos y apropiados para el trabajo.</li>
+      <li data-es="Tus presupuestos cumplen todas las leyes, requisitos de licencia y regulaciones que apliquen a tu oficio y a tu ubicación."
+          data-en="Your estimates comply with all laws, licensing requirements, and regulations that apply to your work and location.">Tus presupuestos cumplen todas las leyes, requisitos de licencia y regulaciones que apliquen a tu oficio y a tu ubicación.</li>
+      <li data-es="Cualquier información que introduzcas sobre tus clientes la recopilas y usas con la autorización debida."
+          data-en="Any information you enter about your clients is collected and used with the proper authority to do so.">Cualquier información que introduzcas sobre tus clientes la recopilas y usas con la autorización debida.</li>
+    </ul>
+    <p data-es="Los presupuestos y demás documentos son borradores generados a partir de la información que tú das. Debes revisar cada documento antes de compartirlo, firmarlo o basarte en él. Halobra es una herramienta que te asiste; no sustituye tu criterio profesional."
+       data-en="Estimates and other documents are drafts generated from the information you provide. You must review every document for accuracy before you share it, sign it, or rely on it. Halobra is a tool to assist you; it does not replace your professional judgment.">
+      Los presupuestos y demás documentos son borradores generados a partir de la información que tú das. Debes revisar cada documento antes de compartirlo, firmarlo o basarte en él. Halobra es una herramienta que te asiste; no sustituye tu criterio profesional.
+    </p>
+
+    <h2 data-es="6. Halobra no es parte de tus acuerdos" data-en="6. Halobra is not a party to your agreements">6. Halobra no es parte de tus acuerdos</h2>
+    <p data-es="Cualquier presupuesto, cotización, contrato o acuerdo que crees usando el Servicio es estrictamente entre tú y tu cliente. Halobra no es parte de esa relación, no es responsable de su cumplimiento y no hace ninguna declaración ni garantía respecto a ninguna transacción, pago, disputa o resultado entre tú y tus clientes. Cualquier disputa derivada de tu trabajo o de tus presupuestos es exclusivamente entre tú y la otra parte."
+       data-en="Any estimate, quote, contract, or agreement you create using the Service is strictly between you and your client. Halobra is not a party to that relationship, is not responsible for its performance, and makes no representation or warranty regarding any transaction, payment, dispute, or outcome between you and your clients. Any disputes arising from your work or your estimates are solely between you and the other party involved.">
+      Cualquier presupuesto, cotización, contrato o acuerdo que crees usando el Servicio es estrictamente entre tú y tu cliente. Halobra no es parte de esa relación, no es responsable de su cumplimiento y no hace ninguna declaración ni garantía respecto a ninguna transacción, pago, disputa o resultado entre tú y tus clientes. Cualquier disputa derivada de tu trabajo o de tus presupuestos es exclusivamente entre tú y la otra parte.
+    </p>
+
+    <h2 data-es="7. Uso aceptable" data-en="7. Acceptable use">7. Uso aceptable</h2>
+    <p data-es="Aceptas no:" data-en="You agree not to:">Aceptas no:</p>
+    <ul>
+      <li data-es="Usar el Servicio con fines ilícitos, fraudulentos o engañosos."
+          data-en="Use the Service for any unlawful, fraudulent, or misleading purpose.">Usar el Servicio con fines ilícitos, fraudulentos o engañosos.</li>
+      <li data-es="Introducir contenido falso, infractor o que no tengas derecho a usar."
+          data-en="Enter content that is false, infringing, or that you do not have the right to use.">Introducir contenido falso, infractor o que no tengas derecho a usar.</li>
+      <li data-es="Intentar acceder, interrumpir, aplicar ingeniería inversa o interferir con el Servicio o su seguridad."
+          data-en="Attempt to access, disrupt, reverse-engineer, or interfere with the Service or its security.">Intentar acceder, interrumpir, aplicar ingeniería inversa o interferir con el Servicio o su seguridad.</li>
+      <li data-es="Usar el Servicio para enviar spam o acosar a cualquier persona."
+          data-en="Use the Service to send spam or to harass any person.">Usar el Servicio para enviar spam o acosar a cualquier persona.</li>
+      <li data-es="Revender, sublicenciar o presentar el Servicio como si fuera tuyo."
+          data-en="Resell, sublicense, or misrepresent the Service as your own.">Revender, sublicenciar o presentar el Servicio como si fuera tuyo.</li>
+    </ul>
+    <p data-es="Podemos suspender o cerrar cuentas que incumplan estos Términos."
+       data-en="We may suspend or terminate accounts that violate these Terms.">Podemos suspender o cerrar cuentas que incumplan estos Términos.</p>
+
+    <h2 data-es="8. Suscripciones y pagos" data-en="8. Subscriptions and payments">8. Suscripciones y pagos</h2>
+    <p data-es="Algunas funciones del Servicio requieren una suscripción de pago. Cuando se ofrezcan funciones de pago, el precio, el ciclo de facturación y las condiciones aplicables se te mostrarán en el momento de la compra, y podrás revisarlos antes de que se te cobre."
+       data-en="Some features of the Service require a paid subscription. When paid features are offered, the price, billing cycle, and any applicable terms will be presented to you at the time of purchase, and you will have the chance to review them before you are charged.">
+      Algunas funciones del Servicio requieren una suscripción de pago. Cuando se ofrezcan funciones de pago, el precio, el ciclo de facturación y las condiciones aplicables se te mostrarán en el momento de la compra, y podrás revisarlos antes de que se te cobre.
+    </p>
+    <ul>
+      <li data-es="Las compras hechas a través de App Store, Google Play u otra tienda también están sujetas a las condiciones de esa tienda, y los pagos los procesa esa tienda."
+          data-en="Purchases made through the Apple App Store, Google Play, or another app store are also subject to that store&rsquo;s terms, and payments are processed by that store.">Las compras hechas a través de App Store, Google Play u otra tienda también están sujetas a las condiciones de esa tienda, y los pagos los procesa esa tienda.</li>
+      <li data-es="Salvo que la ley o las políticas de la tienda lo exijan, los pagos no son reembolsables."
+          data-en="Unless required by law or by the applicable app store&rsquo;s policies, payments are non-refundable.">Salvo que la ley o las políticas de la tienda lo exijan, los pagos no son reembolsables.</li>
+      <li data-es="Eres responsable de los impuestos asociados a tu suscripción."
+          data-en="You are responsible for any taxes associated with your subscription.">Eres responsable de los impuestos asociados a tu suscripción.</li>
+      <li data-es="Podemos cambiar precios o planes de cara al futuro; los cambios no afectarán a un periodo de facturación ya pagado."
+          data-en="We may change our prices or plans going forward; changes will not affect a billing period you have already paid for.">Podemos cambiar precios o planes de cara al futuro; los cambios no afectarán a un periodo de facturación ya pagado.</li>
+    </ul>
+
+    <h2 data-es="9. Propiedad intelectual" data-en="9. Intellectual property">9. Propiedad intelectual</h2>
+    <p data-es="El Servicio, incluidos su software, diseño y marca, es propiedad de Halobra y está protegido por la ley. Te concedemos un derecho limitado, no exclusivo e intransferible a usar el Servicio para tu negocio, sujeto a estos Términos. Tú conservas la propiedad del contenido y la información que introduces, y nos autorizas a procesarlos y almacenarlos únicamente en la medida necesaria para prestarte el Servicio."
+       data-en="The Service, including its software, design, and branding, is owned by Halobra and is protected by law. We grant you a limited, non-exclusive, non-transferable right to use the Service for your business, subject to these Terms. You keep ownership of the content and information you enter, and you grant us permission to process and store that content only as needed to provide the Service to you.">
+      El Servicio, incluidos su software, diseño y marca, es propiedad de Halobra y está protegido por la ley. Te concedemos un derecho limitado, no exclusivo e intransferible a usar el Servicio para tu negocio, sujeto a estos Términos. Tú conservas la propiedad del contenido y la información que introduces, y nos autorizas a procesarlos y almacenarlos únicamente en la medida necesaria para prestarte el Servicio.
+    </p>
+
+    <h2 data-es="10. Exención de garantías" data-en="10. Disclaimer of warranties">10. Exención de garantías</h2>
+    <p data-es="El Servicio se ofrece &laquo;tal cual&raquo; y &laquo;según disponibilidad&raquo;, sin garantías de ningún tipo, expresas o implícitas, incluidas sin limitación las de comerciabilidad, idoneidad para un fin determinado, exactitud y no infracción. No garantizamos que el Servicio funcione sin interrupciones ni errores, ni que un presupuesto o documento generado sea exacto, completo o adecuado para un trabajo concreto. Usas el Servicio bajo tu propio riesgo."
+       data-en="The Service is provided &ldquo;as is&rdquo; and &ldquo;as available,&rdquo; without warranties of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, accuracy, and non-infringement. We do not warrant that the Service will be uninterrupted, error-free, or that any estimate or document it generates will be accurate, complete, or suitable for a given job. You use the Service at your own risk.">
+      El Servicio se ofrece &laquo;tal cual&raquo; y &laquo;según disponibilidad&raquo;, sin garantías de ningún tipo, expresas o implícitas, incluidas sin limitación las de comerciabilidad, idoneidad para un fin determinado, exactitud y no infracción. No garantizamos que el Servicio funcione sin interrupciones ni errores, ni que un presupuesto o documento generado sea exacto, completo o adecuado para un trabajo concreto. Usas el Servicio bajo tu propio riesgo.
+    </p>
+
+    <h2 data-es="11. Limitación de responsabilidad" data-en="11. Limitation of liability">11. Limitación de responsabilidad</h2>
+    <p data-es="En la máxima medida permitida por la ley, Halobra y sus titulares no serán responsables de daños indirectos, incidentales, especiales, consecuentes o punitivos, ni de pérdida de beneficios, ingresos, datos o negocio, derivados de o relacionados con tu uso del Servicio &mdash; incluidos errores en un presupuesto, disputas con un cliente o decisiones tomadas confiando en el Servicio. En la máxima medida permitida por la ley, nuestra responsabilidad total por cualquier reclamación relativa al Servicio no excederá el importe que nos hayas pagado en los doce meses anteriores a la reclamación."
+       data-en="To the fullest extent permitted by law, Halobra and its owners will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, data, or business, arising out of or related to your use of the Service &mdash; including any errors in an estimate, any dispute with a client, or any decision made in reliance on the Service. To the fullest extent permitted by law, our total liability for any claim relating to the Service will not exceed the amount you paid us for the Service in the twelve months before the claim.">
+      En la máxima medida permitida por la ley, Halobra y sus titulares no serán responsables de daños indirectos, incidentales, especiales, consecuentes o punitivos, ni de pérdida de beneficios, ingresos, datos o negocio, derivados de o relacionados con tu uso del Servicio &mdash; incluidos errores en un presupuesto, disputas con un cliente o decisiones tomadas confiando en el Servicio. En la máxima medida permitida por la ley, nuestra responsabilidad total por cualquier reclamación relativa al Servicio no excederá el importe que nos hayas pagado en los doce meses anteriores a la reclamación.
+    </p>
+
+    <h2 data-es="12. Indemnización" data-en="12. Indemnification">12. Indemnización</h2>
+    <p data-es="Aceptas indemnizar y mantener indemne a Halobra y a sus titulares frente a cualquier reclamación, pérdida o gasto (incluidos honorarios legales razonables) derivados de tu uso del Servicio, de tu contenido, de tu trabajo con tus clientes, o de tu incumplimiento de estos Términos o de cualquier ley."
+       data-en="You agree to indemnify and hold harmless Halobra and its owners from any claims, losses, or expenses (including reasonable legal fees) arising from your use of the Service, your content, your work with your clients, or your violation of these Terms or of any law.">
+      Aceptas indemnizar y mantener indemne a Halobra y a sus titulares frente a cualquier reclamación, pérdida o gasto (incluidos honorarios legales razonables) derivados de tu uso del Servicio, de tu contenido, de tu trabajo con tus clientes, o de tu incumplimiento de estos Términos o de cualquier ley.
+    </p>
+
+    <h2 data-es="13. Terminación" data-en="13. Termination">13. Terminación</h2>
+    <p data-es="Puedes dejar de usar el Servicio y eliminar tu cuenta en cualquier momento desde la app. Podemos suspender o cancelar tu acceso si incumples estos Términos o usas el Servicio de forma que pueda perjudicar a otros o a nosotros. Las disposiciones que por su naturaleza deban sobrevivir a la terminación &mdash; responsabilidad sobre el contenido, exenciones, limitación de responsabilidad e indemnización &mdash; seguirán aplicándose."
+       data-en="You may stop using the Service and delete your account at any time from within the app. We may suspend or terminate your access if you violate these Terms or use the Service in a way that could harm others or us. Provisions that by their nature should survive termination &mdash; such as content responsibility, disclaimers, limitation of liability, and indemnification &mdash; will continue to apply.">
+      Puedes dejar de usar el Servicio y eliminar tu cuenta en cualquier momento desde la app. Podemos suspender o cancelar tu acceso si incumples estos Términos o usas el Servicio de forma que pueda perjudicar a otros o a nosotros. Las disposiciones que por su naturaleza deban sobrevivir a la terminación &mdash; responsabilidad sobre el contenido, exenciones, limitación de responsabilidad e indemnización &mdash; seguirán aplicándose.
+    </p>
+
+    <h2 data-es="14. Ley aplicable" data-en="14. Governing law">14. Ley aplicable</h2>
+    <p data-es="Estos Términos se rigen por las leyes del Estado de Nevada, Estados Unidos, sin atender a sus normas de conflicto de leyes. Aceptas que cualquier disputa relativa a estos Términos o al Servicio se resolverá en los tribunales estatales o federales situados en Nevada, salvo que la ley aplicable exija otra cosa."
+       data-en="These Terms are governed by the laws of the State of Nevada, United States, without regard to its conflict-of-law rules. You agree that any dispute relating to these Terms or the Service will be handled in the state or federal courts located in Nevada, unless applicable law requires otherwise.">
+      Estos Términos se rigen por las leyes del Estado de Nevada, Estados Unidos, sin atender a sus normas de conflicto de leyes. Aceptas que cualquier disputa relativa a estos Términos o al Servicio se resolverá en los tribunales estatales o federales situados en Nevada, salvo que la ley aplicable exija otra cosa.
+    </p>
+
+    <h2 data-es="15. Idioma de estos Términos" data-en="15. Language of these Terms">15. Idioma de estos Términos</h2>
+    <p data-es="Estos Términos se publican en español y en inglés para tu comodidad. Si hay alguna discrepancia entre ambas versiones, prevalece la versión en inglés."
+       data-en="These Terms are published in English and Spanish for your convenience. If there is any discrepancy between the two versions, the English version prevails.">
+      Estos Términos se publican en español y en inglés para tu comodidad. Si hay alguna discrepancia entre ambas versiones, prevalece la versión en inglés.
+    </p>
+
+    <h2 data-es="16. Cambios en estos Términos" data-en="16. Changes to these Terms">16. Cambios en estos Términos</h2>
+    <p data-es="Podemos actualizar estos Términos periódicamente. Cuando lo hagamos, cambiaremos la fecha de &laquo;Última actualización&raquo; al inicio de esta página. Si los cambios son significativos, haremos esfuerzos razonables por avisarte. Que sigas usando el Servicio después de que los cambios entren en vigor significa que aceptas los Términos actualizados."
+       data-en="We may update these Terms from time to time. When we do, we will revise the &ldquo;Last updated&rdquo; date at the top of this page. If the changes are significant, we will make reasonable efforts to notify you. Your continued use of the Service after changes take effect means you accept the updated Terms.">
+      Podemos actualizar estos Términos periódicamente. Cuando lo hagamos, cambiaremos la fecha de &laquo;Última actualización&raquo; al inicio de esta página. Si los cambios son significativos, haremos esfuerzos razonables por avisarte. Que sigas usando el Servicio después de que los cambios entren en vigor significa que aceptas los Términos actualizados.
+    </p>
+
+    <h2 data-es="17. Contacto" data-en="17. Contact us">17. Contacto</h2>
+    <p data-es="Si tienes preguntas sobre estos Términos, escríbenos a:" data-en="If you have questions about these Terms, contact us at:">Si tienes preguntas sobre estos Términos, escríbenos a:</p>
+    <p><a class="correo" href="mailto:soporte@halobra.com">soporte@halobra.com</a></p>
+
   </div>
-
-  <h2>1. Acceptance of these Terms</h2>
-  <p>
-    By accessing or using the Service, you confirm that you have read,
-    understood, and agree to these Terms and to our
-    <a href="/privacy">Privacy Policy</a>, which is incorporated here by
-    reference. We may update these Terms from time to time, as described in the
-    "Changes to these Terms" section below.
-  </p>
-
-  <h2>2. What Halobra is</h2>
-  <p>
-    Halobra is a software tool that helps users create,
-    price, and share professional estimates. Halobra provides the tool only. It
-    generates documents based on the information you provide. Halobra does not
-    perform contracting work, does not set prices for you, does not verify the
-    accuracy of any estimate, and does not guarantee any business result.
-  </p>
-
-  <h2>3. Eligibility</h2>
-  <p>
-    You must be at least 18 years old and able to form a binding contract to use
-    the Service. The Service is intended for professional and business use. It
-    is not directed to children, and we do not knowingly allow anyone under 18
-    to use it.
-  </p>
-
-  <h2>4. Your account</h2>
-  <ul>
-    <li>You are responsible for keeping your account credentials secure and for
-      all activity that occurs under your account.</li>
-    <li>You agree to provide accurate information when you register and to keep
-      it up to date.</li>
-    <li>Notify us promptly if you believe your account has been accessed without
-      your permission.</li>
-  </ul>
-
-  <h2>5. Your content and your responsibility</h2>
-  <p>
-    You are solely responsible for all information you enter into the Service and
-    for every estimate, price, quantity, scope of work, term, note, and document
-    you create, generate, sign, or share using the Service. This includes
-    ensuring that:
-  </p>
-  <ul>
-    <li>Your prices, calculations, quantities, and scope of work are correct and
-      appropriate for the job.</li>
-    <li>Your estimates comply with all laws, licensing requirements, and
-      regulations that apply to your work and location.</li>
-    <li>Any information you enter about your clients is collected and used with
-      the proper authority to do so.</li>
-  </ul>
-  <p>
-    Estimates and other documents are drafts generated from the information you
-    provide. You must review every document for accuracy before you share it,
-    sign it, or rely on it. Halobra is a tool to assist you; it does not replace
-    your professional judgment.
-  </p>
-
-  <h2>6. Halobra is not a party to your agreements</h2>
-  <p>
-    Any estimate, quote, contract, or agreement you create using the Service is
-    strictly between you and your client. Halobra is not a party to that
-    relationship, is not responsible for its performance, and makes no
-    representation or warranty regarding any transaction, payment, dispute, or
-    outcome between you and your clients. Any disputes arising from your work or
-    your estimates are solely between you and the other party involved.
-  </p>
-
-  <h2>7. Acceptable use</h2>
-  <p>You agree not to:</p>
-  <ul>
-    <li>Use the Service for any unlawful, fraudulent, or misleading purpose.</li>
-    <li>Enter content that is false, infringing, or that you do not have the
-      right to use.</li>
-    <li>Attempt to access, disrupt, reverse-engineer, or interfere with the
-      Service or its security.</li>
-    <li>Use the Service to send spam or to harass any person.</li>
-    <li>Resell, sublicense, or misrepresent the Service as your own.</li>
-  </ul>
-  <p>
-    We may suspend or terminate accounts that violate these Terms.
-  </p>
-
-  <h2>8. Subscriptions and payments</h2>
-  <p>
-    Some features of the Service may require a paid subscription. When paid
-    features are offered, the price, billing cycle, and any applicable terms will
-    be presented to you at the time of purchase, and you will have the chance to
-    review them before you are charged.
-  </p>
-  <ul>
-    <li>Purchases made through the Apple App Store or another app store are also
-      subject to that store's terms, and payments are processed by that store.</li>
-    <li>Unless required by law or by the applicable app store's policies,
-      payments are non-refundable.</li>
-    <li>You are responsible for any taxes associated with your subscription.</li>
-    <li>We may change our prices or plans going forward; changes will not affect
-      a billing period you have already paid for.</li>
-  </ul>
-
-  <h2>9. Intellectual property</h2>
-  <p>
-    The Service, including its software, design, and branding, is owned by
-    Halobra and is protected by law. We grant you a limited, non-exclusive,
-    non-transferable right to use the Service for your business, subject to these
-    Terms. You keep ownership of the content and information you enter, and you
-    grant us permission to process and store that content only as needed to
-    provide the Service to you.
-  </p>
-
-  <h2>10. Disclaimer of warranties</h2>
-  <p>
-    The Service is provided "as is" and "as available," without warranties of any
-    kind, whether express or implied, including but not limited to warranties of
-    merchantability, fitness for a particular purpose, accuracy, and
-    non-infringement. We do not warrant that the Service will be uninterrupted,
-    error-free, or that any estimate or document it generates will be accurate,
-    complete, or suitable for a given job. You use the Service at your own risk.
-  </p>
-
-  <h2>11. Limitation of liability</h2>
-  <p>
-    To the fullest extent permitted by law, Halobra and its owners will not be
-    liable for any indirect, incidental, special, consequential, or punitive
-    damages, or for any loss of profits, revenue, data, or business, arising out
-    of or related to your use of the Service — including any errors in an
-    estimate, any dispute with a client, or any decision made in reliance on the
-    Service. To the fullest extent permitted by law, our total liability for any
-    claim relating to the Service will not exceed the amount you paid us for the
-    Service in the twelve months before the claim.
-  </p>
-
-  <h2>12. Indemnification</h2>
-  <p>
-    You agree to indemnify and hold harmless Halobra and its owners from any
-    claims, losses, or expenses (including reasonable legal fees) arising from
-    your use of the Service, your content, your work with your clients, or your
-    violation of these Terms or of any law.
-  </p>
-
-  <h2>13. Termination</h2>
-  <p>
-    You may stop using the Service and delete your account at any time from
-    within the app. We may suspend or terminate your access if you violate these
-    Terms or use the Service in a way that could harm others or us. Provisions
-    that by their nature should survive termination — such as content
-    responsibility, disclaimers, limitation of liability, and indemnification —
-    will continue to apply.
-  </p>
-
-  <h2>14. Governing law</h2>
-  <p>
-    These Terms are governed by the laws of the State of Nevada, United States,
-    without regard to its conflict-of-law rules. You agree that any dispute
-    relating to these Terms or the Service will be handled in the state or
-    federal courts located in Nevada, unless applicable law requires otherwise.
-  </p>
-
-  <h2>15. Changes to these Terms</h2>
-  <p>
-    We may update these Terms from time to time. When we do, we will revise the
-    "Last updated" date at the top of this page. If the changes are significant,
-    we will make reasonable efforts to notify you. Your continued use of the
-    Service after changes take effect means you accept the updated Terms.
-  </p>
-
-  <h2>16. Contact us</h2>
-  <p>
-    If you have questions about these Terms, contact us at:
-    <br>
-    <a href="mailto:info@halobra.com">info@halobra.com</a>
-  </p>
 </main>
 
-<footer>
-  <span class="brand">Halobra</span> — Estimates for contractors.<br>
-  &copy; 2026 Halobra. All rights reserved.
+<footer class="pie">
+  <div class="wrap">
+    <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+    <a href="privacy.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+    <a href="eliminar-cuenta.html" data-es="Eliminar cuenta" data-en="Delete account">Eliminar cuenta</a>
+    <a href="mailto:soporte@halobra.com">soporte@halobra.com</a>
+    <span class="derechos">&copy; 2026 Arias</span>
+  </div>
 </footer>
+
+<script>
+(function(){
+  var nodos=document.querySelectorAll('[data-es][data-en]');
+  var botones=document.querySelectorAll('.idioma button');
+  function aplicar(idioma){
+    document.documentElement.lang=idioma;
+    nodos.forEach(function(n){ n.innerHTML=n.getAttribute('data-'+idioma); });
+    botones.forEach(function(b){ b.setAttribute('aria-pressed',String(b.dataset.set===idioma)); });
+    try{ localStorage.setItem('halobra-idioma',idioma); }catch(e){}
+  }
+  var guardado=null;
+  try{ guardado=localStorage.getItem('halobra-idioma'); }catch(e){}
+  aplicar(guardado || ((navigator.language||'es').toLowerCase().indexOf('en')===0 ? 'en' : 'es'));
+  botones.forEach(function(b){ b.addEventListener('click',function(){ aplicar(b.dataset.set); }); });
+})();
+</script>
+
 </body>
 </html>

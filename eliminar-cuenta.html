@@ -1,149 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Account Deletion — Halobra</title>
+<title>Eliminar tu cuenta — Halobra</title>
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#071726">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --azul: #0F2942;
-    --naranja: #F26522;
-    --gris: #5A6675;
-    --linea: #E4E8EC;
-    --fondo: #FFFFFF;
-    --texto: #1E2A38;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--texto);
-    background: var(--fondo);
-    line-height: 1.65;
-  }
-  header {
-    background: var(--azul);
-    color: #fff;
-    padding: 40px 24px 32px;
-  }
-  header .wrap { max-width: 760px; margin: 0 auto; }
-  header .brand {
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-  }
-  header .brand span { color: var(--naranja); }
-  header h1 {
-    font-size: 30px;
-    margin: 18px 0 6px;
-    font-weight: 700;
-  }
-  header .updated {
-    font-size: 14px;
-    color: #A9B6C4;
-    margin: 0;
-  }
-  main {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-  }
-  main p, main li { font-size: 16px; }
-  h2 {
-    font-size: 20px;
-    margin: 38px 0 12px;
-    color: var(--azul);
-    border-bottom: 2px solid var(--linea);
-    padding-bottom: 8px;
-  }
-  h3 {
-    font-size: 16px;
-    margin: 22px 0 6px;
-    color: var(--azul);
-  }
-  ul { padding-left: 22px; }
-  li { margin-bottom: 8px; }
-  a { color: var(--naranja); }
-  .intro {
-    font-size: 17px;
-    color: var(--gris);
-  }
-  .callout {
-    background: #F7F9FB;
-    border-left: 4px solid var(--naranja);
-    padding: 16px 18px;
-    border-radius: 6px;
-    margin: 20px 0;
-    font-size: 15px;
-  }
-  footer {
-    border-top: 1px solid var(--linea);
-    padding: 28px 24px;
-    text-align: center;
-    color: var(--gris);
-    font-size: 14px;
-  }
-  footer .brand { font-weight: 700; color: var(--azul); }
+:root{
+  --fondo:#071726;--fondo-2:#0A1E31;--navy:#0F2942;--naranja:#F26522;--rojo:#E0483B;
+  --claro:#E8EEF4;--tenue:#8FA2B5;--borde:rgba(255,255,255,.10);--borde-fuerte:rgba(255,255,255,.20);
+  --display:"Archivo",system-ui,sans-serif;--cuerpo:"Source Sans 3",system-ui,sans-serif;--dato:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--fondo);color:var(--claro);font-family:var(--cuerpo);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+.columna{max-width:780px;margin:0 auto;padding:0 24px;}
+a{color:var(--naranja);}
+:focus-visible{outline:3px solid var(--naranja);outline-offset:3px;border-radius:4px;}
+
+.barra{position:sticky;top:0;z-index:40;background:rgba(7,23,38,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--borde);}
+.barra .wrap{display:flex;align-items:center;gap:22px;height:66px;}
+.marca{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:1.6px;color:#fff;text-decoration:none;margin-right:auto;}
+.marca em{color:var(--naranja);font-style:normal;}
+.volver{color:var(--tenue);text-decoration:none;font-size:14.5px;font-weight:600;}
+.volver:hover{color:#fff;}
+.idioma{display:flex;border:1px solid var(--borde-fuerte);border-radius:999px;overflow:hidden;}
+.idioma button{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:1px;padding:6px 12px;border:0;background:transparent;color:var(--tenue);cursor:pointer;}
+.idioma button[aria-pressed="true"]{background:var(--naranja);color:#fff;}
+
+.cabeza{position:relative;padding:64px 0 52px;overflow:hidden;border-bottom:1px solid var(--borde);}
+.cabeza::before{content:"";position:absolute;inset:0;background:radial-gradient(66% 60% at 18% 0%,rgba(23,57,90,.8) 0%,transparent 64%);pointer-events:none;}
+.cabeza .columna{position:relative;}
+.rotulo{font-family:var(--display);font-size:11.5px;font-weight:700;letter-spacing:2.6px;color:var(--naranja);margin:0 0 12px;}
+.cabeza h1{font-family:var(--display);font-weight:800;font-size:clamp(31px,4.6vw,46px);letter-spacing:-1px;line-height:1.08;margin:0 0 10px;}
+.fecha{font-family:var(--dato);font-size:13.5px;color:var(--tenue);margin:0;}
+
+.legal{padding:44px 0 92px;}
+.legal h2{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.2px;color:#fff;margin:44px 0 12px;padding-bottom:10px;border-bottom:1px solid var(--borde);}
+.legal p,.legal li{font-size:16.5px;color:#CFDAE4;}
+.legal ul,.legal ol{padding-left:22px;}
+.legal li{margin-bottom:9px;}
+.legal strong{color:#fff;}
+
+.alerta{background:rgba(224,72,59,.09);border:1px solid rgba(224,72,59,.32);border-left:3px solid var(--rojo);border-radius:11px;padding:20px 22px;margin:26px 0;}
+.alerta p{margin:0;font-size:16px;}
+.alerta strong{color:#FF8A7E;}
+
+.pasos{list-style:none;counter-reset:paso;margin:0;padding:0;}
+.pasos li{
+  counter-increment:paso;position:relative;padding:15px 0 15px 52px;
+  border-bottom:1px solid var(--borde);margin:0;
+}
+.pasos li:last-child{border-bottom:0;}
+.pasos li::before{
+  content:counter(paso);position:absolute;left:0;top:13px;
+  width:32px;height:32px;border-radius:9px;display:grid;place-items:center;
+  background:rgba(242,101,34,.14);border:1px solid rgba(242,101,34,.35);
+  font-family:var(--dato);font-size:14px;color:var(--naranja);
+}
+
+.correo{font-family:var(--dato);font-size:18px;}
+
+.pie{background:#050F1A;border-top:1px solid var(--borde);padding:42px 0;font-size:14.5px;color:var(--tenue);}
+.pie .wrap{display:flex;flex-wrap:wrap;gap:13px 26px;align-items:center;}
+.pie a{color:#B9C7D4;text-decoration:none;}
+.pie a:hover{color:#fff;text-decoration:underline;}
+.pie .derechos{margin-left:auto;}
+
+@media(max-width:560px){
+  .volver{display:none;}
+  .pie .derechos{margin-left:0;width:100%;}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 </style>
 </head>
 <body>
-<header>
+
+<nav class="barra">
   <div class="wrap">
-    <div class="brand">HALO<span>BRA</span></div>
-    <h1>Account Deletion</h1>
-    <p class="updated">Last updated: August 13, 2026</p>
+    <a class="marca" href="index.html">HALO<em>BRA</em></a>
+    <a class="volver" href="index.html" data-es="&larr; Inicio" data-en="&larr; Home">&larr; Inicio</a>
+    <div class="idioma" role="group" aria-label="Idioma / Language">
+      <button type="button" data-set="es" aria-pressed="true">ES</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="cabeza">
+  <div class="columna">
+    <p class="rotulo" data-es="TU CUENTA" data-en="YOUR ACCOUNT">TU CUENTA</p>
+    <h1 data-es="Eliminar tu cuenta" data-en="Delete your account">Eliminar tu cuenta</h1>
+    <p class="fecha" data-es="Última actualización: 16 de agosto de 2026" data-en="Last updated: August 16, 2026">Última actualización: 16 de agosto de 2026</p>
   </div>
 </header>
 
-<main>
-  <h2>How to delete your account</h2>
-  <p>
-    You can delete your Halobra account directly from within the app. This
-    action is <strong>permanent and cannot be undone</strong>. Follow these
-    steps:
-  </p>
-  <ol>
-    <li>Open Halobra and sign in.</li>
-    <li>Go to the Settings tab.</li>
-    <li>In the ACCOUNT section, tap "Delete my account."</li>
-    <li>Enter your password to confirm.</li>
-    <li>Tap "Delete my account forever."</li>
-  </ol>
+<main class="legal">
+  <div class="columna">
 
-  <h2>What data is deleted</h2>
-  <p>Deleting your account permanently removes, in cascade:</p>
-  <ul>
-    <li>Your account and sign-in credentials.</li>
-    <li>Your business profile (name, phone number, business name, and license number).</li>
-    <li>All saved clients.</li>
-    <li>All estimates and their PDFs.</li>
-    <li>Your custom pricing catalog.</li>
-  </ul>
+    <div class="alerta">
+      <p data-es="<strong>Esto es permanente.</strong> Cuando eliminas tu cuenta no hay forma de recuperarla, ni de recuperar tus presupuestos, tus clientes ni tu catálogo de precios. Si solo quieres dejar de pagar, cancela la suscripción desde los ajustes de tu teléfono en lugar de eliminar la cuenta."
+         data-en="<strong>This is permanent.</strong> Once you delete your account there is no way to recover it, or to recover your estimates, clients, or price catalog. If you only want to stop paying, cancel the subscription from your phone&rsquo;s settings instead of deleting your account.">
+        <strong>Esto es permanente.</strong> Cuando eliminas tu cuenta no hay forma de recuperarla, ni de recuperar tus presupuestos, tus clientes ni tu catálogo de precios. Si solo quieres dejar de pagar, cancela la suscripción desde los ajustes de tu teléfono en lugar de eliminar la cuenta.
+      </p>
+    </div>
 
-  <h2>What data is retained</h2>
-  <p>
-    No personal data is retained after your account is deleted. Voice
-    recordings and photos are never stored in the first place — they are
-    processed only in memory to generate your estimates — so there is
-    nothing to delete there.
-  </p>
-  <p>
-    Subscription transaction records are retained by the app stores (Google
-    Play and Apple), not by Halobra.
-  </p>
+    <h2 data-es="Cómo eliminarla desde la app" data-en="How to delete it from the app">Cómo eliminarla desde la app</h2>
+    <ol class="pasos">
+      <li data-es="Abre Halobra e inicia sesión." data-en="Open Halobra and sign in.">Abre Halobra e inicia sesión.</li>
+      <li data-es="Ve a la pestaña <strong>Ajustes</strong>." data-en="Go to the <strong>Settings</strong> tab.">Ve a la pestaña <strong>Ajustes</strong>.</li>
+      <li data-es="En la sección <strong>CUENTA</strong>, toca <strong>Eliminar mi cuenta</strong>." data-en="In the <strong>ACCOUNT</strong> section, tap <strong>Delete my account</strong>.">En la sección <strong>CUENTA</strong>, toca <strong>Eliminar mi cuenta</strong>.</li>
+      <li data-es="Escribe tu contraseña para confirmar." data-en="Enter your password to confirm.">Escribe tu contraseña para confirmar.</li>
+      <li data-es="Toca <strong>Eliminar mi cuenta para siempre</strong>." data-en="Tap <strong>Delete my account forever</strong>.">Toca <strong>Eliminar mi cuenta para siempre</strong>.</li>
+    </ol>
 
-  <h2>Need help?</h2>
-  <p>
-    If you are unable to access your account to delete it yourself, email us
-    at
-    <a href="mailto:admin@halobra.com">admin@halobra.com</a> and we will
-    process your request.
-  </p>
+    <h2 data-es="Qué se elimina" data-en="What gets deleted">Qué se elimina</h2>
+    <p data-es="Eliminar tu cuenta borra de forma permanente y en cascada:" data-en="Deleting your account permanently removes, in cascade:">Eliminar tu cuenta borra de forma permanente y en cascada:</p>
+    <ul>
+      <li data-es="Tu cuenta y tus credenciales de acceso." data-en="Your account and sign-in credentials.">Tu cuenta y tus credenciales de acceso.</li>
+      <li data-es="Tu perfil de negocio (nombre, teléfono, dirección, nombre de la empresa y número de licencia)."
+          data-en="Your business profile (name, phone number, address, business name, and license number).">Tu perfil de negocio (nombre, teléfono, dirección, nombre de la empresa y número de licencia).</li>
+      <li data-es="El logo de tu empresa que hayas subido." data-en="The business logo you uploaded.">El logo de tu empresa que hayas subido.</li>
+      <li data-es="Todos los clientes guardados." data-en="All saved clients.">Todos los clientes guardados.</li>
+      <li data-es="Todos los presupuestos y sus PDF." data-en="All estimates and their PDFs.">Todos los presupuestos y sus PDF.</li>
+      <li data-es="Tu catálogo de precios personalizado." data-en="Your custom pricing catalog.">Tu catálogo de precios personalizado.</li>
+    </ul>
+
+    <h2 data-es="Qué no se conserva" data-en="What is not retained">Qué no se conserva</h2>
+    <p data-es="No conservamos datos personales después de eliminar tu cuenta. Las grabaciones de voz y las fotos del sitio de trabajo nunca llegan a guardarse &mdash; se procesan solo en memoria para generar tus presupuestos &mdash; así que ahí no queda nada que borrar."
+       data-en="We do not retain personal data after your account is deleted. Voice recordings and job-site photos are never stored in the first place &mdash; they are processed only in memory to generate your estimates &mdash; so there is nothing to delete there.">
+      No conservamos datos personales después de eliminar tu cuenta. Las grabaciones de voz y las fotos del sitio de trabajo nunca llegan a guardarse &mdash; se procesan solo en memoria para generar tus presupuestos &mdash; así que ahí no queda nada que borrar.
+    </p>
+    <p data-es="Los registros de transacciones de la suscripción los conservan las tiendas de aplicaciones (App Store y Google Play), no Halobra."
+       data-en="Subscription transaction records are retained by the app stores (App Store and Google Play), not by Halobra.">
+      Los registros de transacciones de la suscripción los conservan las tiendas de aplicaciones (App Store y Google Play), no Halobra.
+    </p>
+
+    <h2 data-es="Antes de eliminar: tu suscripción" data-en="Before you delete: your subscription">Antes de eliminar: tu suscripción</h2>
+    <p data-es="Eliminar tu cuenta de Halobra <strong>no cancela</strong> tu suscripción. La suscripción la gestiona la tienda, así que tienes que cancelarla por separado desde los ajustes de tu teléfono, en la sección de suscripciones de App Store o Google Play. Si no lo haces, el cobro sigue."
+       data-en="Deleting your Halobra account <strong>does not cancel</strong> your subscription. Subscriptions are managed by the app store, so you must cancel separately from your phone&rsquo;s settings, in the App Store or Google Play subscriptions section. If you don&rsquo;t, billing continues.">
+      Eliminar tu cuenta de Halobra <strong>no cancela</strong> tu suscripción. La suscripción la gestiona la tienda, así que tienes que cancelarla por separado desde los ajustes de tu teléfono, en la sección de suscripciones de App Store o Google Play. Si no lo haces, el cobro sigue.
+    </p>
+
+    <h2 data-es="¿No puedes entrar a tu cuenta?" data-en="Can&rsquo;t access your account?">¿No puedes entrar a tu cuenta?</h2>
+    <p data-es="Si no logras acceder para eliminarla tú mismo, escríbenos desde el correo con el que te registraste y procesamos la solicitud:"
+       data-en="If you are unable to sign in to delete it yourself, email us from the address you registered with and we will process your request:">
+      Si no logras acceder para eliminarla tú mismo, escríbenos desde el correo con el que te registraste y procesamos la solicitud:
+    </p>
+    <p><a class="correo" href="mailto:soporte@halobra.com">soporte@halobra.com</a></p>
+
+  </div>
 </main>
 
-<footer>
-  <span class="brand">Halobra</span> — Estimates for contractors.<br>
-  &copy; 2026 Halobra. All rights reserved.
+<footer class="pie">
+  <div class="wrap">
+    <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+    <a href="privacy.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+    <a href="terms.html" data-es="Términos" data-en="Terms">Términos</a>
+    <a href="mailto:soporte@halobra.com">soporte@halobra.com</a>
+    <span class="derechos">&copy; 2026 Arias</span>
+  </div>
 </footer>
+
+<script>
+(function(){
+  var nodos=document.querySelectorAll('[data-es][data-en]');
+  var botones=document.querySelectorAll('.idioma button');
+  function aplicar(idioma){
+    document.documentElement.lang=idioma;
+    nodos.forEach(function(n){ n.innerHTML=n.getAttribute('data-'+idioma); });
+    botones.forEach(function(b){ b.setAttribute('aria-pressed',String(b.dataset.set===idioma)); });
+    try{ localStorage.setItem('halobra-idioma',idioma); }catch(e){}
+  }
+  var guardado=null;
+  try{ guardado=localStorage.getItem('halobra-idioma'); }catch(e){}
+  aplicar(guardado || ((navigator.language||'es').toLowerCase().indexOf('en')===0 ? 'en' : 'es'));
+  botones.forEach(function(b){ b.addEventListener('click',function(){ aplicar(b.dataset.set); }); });
+})();
+</script>
+
 </body>
 </html>

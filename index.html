@@ -1,236 +1,709 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — Halobra</title>
+<title>Halobra — Presupuestos para contratistas</title>
+<meta name="description" content="Dicta el trabajo en español, entrega el presupuesto en inglés. Halobra arma las partidas, aplica los precios de tu catálogo y genera el PDF que tu cliente firma.">
+<meta property="og:title" content="Halobra — Presupuestos para contratistas">
+<meta property="og:description" content="Habla el trabajo. Entrega el presupuesto.">
+<meta property="og:url" content="https://halobra.com">
+<meta name="theme-color" content="#071726">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --azul: #0F2942;
-    --naranja: #F26522;
-    --gris: #5A6675;
-    --linea: #E4E8EC;
-    --fondo: #FFFFFF;
-    --texto: #1E2A38;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--texto);
-    background: var(--fondo);
-    line-height: 1.65;
-  }
-  header {
-    background: var(--azul);
-    color: #fff;
-    padding: 40px 24px 32px;
-  }
-  header .wrap { max-width: 760px; margin: 0 auto; }
-  header .brand {
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-  }
-  header .brand span { color: var(--naranja); }
-  header h1 {
-    font-size: 30px;
-    margin: 18px 0 6px;
-    font-weight: 700;
-  }
-  header .updated {
-    font-size: 14px;
-    color: #A9B6C4;
-    margin: 0;
-  }
-  main {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-  }
-  main p, main li { font-size: 16px; }
-  h2 {
-    font-size: 20px;
-    margin: 38px 0 12px;
-    color: var(--azul);
-    border-bottom: 2px solid var(--linea);
-    padding-bottom: 8px;
-  }
-  h3 {
-    font-size: 16px;
-    margin: 22px 0 6px;
-    color: var(--azul);
-  }
-  ul { padding-left: 22px; }
-  li { margin-bottom: 8px; }
-  a { color: var(--naranja); }
-  .intro {
-    font-size: 17px;
-    color: var(--gris);
-  }
-  .callout {
-    background: #F7F9FB;
-    border-left: 4px solid var(--naranja);
-    padding: 16px 18px;
-    border-radius: 6px;
-    margin: 20px 0;
-    font-size: 15px;
-  }
-  footer {
-    border-top: 1px solid var(--linea);
-    padding: 28px 24px;
-    text-align: center;
-    color: var(--gris);
-    font-size: 14px;
-  }
-  footer .brand { font-weight: 700; color: var(--azul); }
+:root{
+  --fondo:#071726;
+  --fondo-2:#0A1E31;
+  --navy:#0F2942;
+  --naranja:#F26522;
+  --verde:#17994A;
+  --claro:#E8EEF4;
+  --tenue:#8FA2B5;
+  --borde:rgba(255,255,255,.10);
+  --borde-fuerte:rgba(255,255,255,.20);
+  --display:"Archivo",system-ui,sans-serif;
+  --cuerpo:"Source Sans 3",system-ui,sans-serif;
+  --dato:"IBM Plex Mono",ui-monospace,monospace;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--fondo);color:var(--claro);
+  font-family:var(--cuerpo);font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+a{color:var(--naranja);}
+:focus-visible{outline:3px solid var(--naranja);outline-offset:3px;border-radius:4px;}
+
+/* ---------- animación de entrada ---------- */
+.sube{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;}
+.sube.dentro{opacity:1;transform:none;}
+.sube[data-retraso="1"]{transition-delay:.09s;}
+.sube[data-retraso="2"]{transition-delay:.18s;}
+.sube[data-retraso="3"]{transition-delay:.27s;}
+
+/* ---------- barra ---------- */
+.barra{
+  position:sticky;top:0;z-index:40;
+  background:rgba(7,23,38,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--borde);
+}
+.barra .wrap{display:flex;align-items:center;gap:26px;height:66px;}
+.marca{
+  font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:1.6px;
+  color:#fff;text-decoration:none;margin-right:auto;white-space:nowrap;
+}
+.marca em{color:var(--naranja);font-style:normal;}
+.menu{display:flex;gap:24px;}
+.menu a{
+  color:var(--tenue);text-decoration:none;font-size:14.5px;font-weight:600;
+  transition:color .2s;white-space:nowrap;
+}
+.menu a:hover{color:#fff;}
+.idioma{display:flex;border:1px solid var(--borde-fuerte);border-radius:999px;overflow:hidden;}
+.idioma button{
+  font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:1px;
+  padding:6px 12px;border:0;background:transparent;color:var(--tenue);cursor:pointer;
+}
+.idioma button[aria-pressed="true"]{background:var(--naranja);color:#fff;}
+
+.boton{
+  font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:1.3px;
+  text-transform:uppercase;text-decoration:none;padding:14px 26px;border-radius:9px;
+  display:inline-block;transition:transform .18s,background .2s,border-color .2s;
+}
+.boton:hover{transform:translateY(-2px);}
+.boton-primario{background:var(--naranja);color:#fff;box-shadow:0 8px 26px rgba(242,101,34,.28);}
+.boton-primario:hover{background:#ff7434;}
+.boton-borde{border:1.5px solid var(--borde-fuerte);color:#fff;}
+.boton-borde:hover{border-color:#fff;}
+.boton-chico{padding:9px 18px;font-size:12.5px;}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:96px 0 84px;overflow:hidden;}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(70% 55% at 12% 4%,rgba(23,57,90,.85) 0%,transparent 62%),
+    radial-gradient(48% 42% at 92% 14%,rgba(242,101,34,.16) 0%,transparent 66%);
+  pointer-events:none;
+}
+.plano{
+  position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:58px 58px;
+  mask-image:radial-gradient(70% 60% at 30% 20%,#000 0%,transparent 78%);
+  -webkit-mask-image:radial-gradient(70% 60% at 30% 20%,#000 0%,transparent 78%);
+}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:58px;align-items:center;}
+
+.cintillo{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--display);font-size:11.5px;font-weight:700;letter-spacing:2.2px;
+  color:var(--naranja);border:1px solid rgba(242,101,34,.35);
+  background:rgba(242,101,34,.08);padding:7px 14px;border-radius:999px;margin:0 0 24px;
+}
+.punto{width:6px;height:6px;border-radius:50%;background:var(--naranja);animation:latir 2.4s ease-in-out infinite;}
+@keyframes latir{0%,100%{opacity:1;}50%{opacity:.25;}}
+
+h1{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(40px,5.6vw,68px);line-height:1.0;letter-spacing:-1.6px;margin:0 0 24px;
+}
+h1 .resalte{color:var(--naranja);display:block;}
+.entrada{font-size:19.5px;color:var(--tenue);margin:0 0 34px;max-width:31em;}
+.acciones{display:flex;flex-wrap:wrap;gap:13px;align-items:center;}
+.acciones .apunte{font-size:14px;color:var(--tenue);}
+
+/* ---------- documento ---------- */
+.doc-zona{position:relative;}
+.doc-nota{font-size:13.5px;color:var(--tenue);text-align:center;margin:0 0 13px;line-height:1.45;}
+.doc-nota strong{color:#fff;font-weight:600;}
+.doc{
+  background:#fff;color:#1E2A38;border-radius:14px;overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,.55);
+  transform:perspective(1400px) rotateY(-4deg) rotateX(1.5deg);
+  transition:transform .5s ease;
+}
+.doc:hover{transform:perspective(1400px) rotateY(0deg) rotateX(0deg);}
+.doc-cabeza{
+  background:var(--navy);color:#fff;padding:14px 19px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.doc-cabeza .titulo{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:1.8px;}
+.doc-cabeza .pastilla{
+  font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:1.2px;
+  background:rgba(255,255,255,.17);padding:4px 11px;border-radius:6px;
+}
+.doc-cuerpo{padding:19px 21px 23px;}
+.doc-obra{font-weight:600;font-size:16px;margin:0 0 14px;}
+.renglon{
+  display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  padding:9px 0;border-bottom:1px solid #E4E8EC;
+}
+.renglon .que{font-size:15px;}
+.renglon .medida{display:block;font-family:var(--dato);font-size:11.5px;color:#5A6675;margin-top:1px;}
+.renglon .monto{font-family:var(--dato);font-weight:500;font-size:15px;white-space:nowrap;}
+.doc-total{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding-top:15px;margin-top:5px;border-top:2.5px solid var(--navy);
+}
+.doc-total .etiqueta{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:1.6px;}
+.doc-total .cifra{font-family:var(--dato);font-weight:500;font-size:28px;color:var(--navy);}
+.doc-firma{margin-top:16px;padding:14px;border:1px dashed #E4E8EC;border-radius:9px;text-align:center;}
+.doc-firma .pide{font-size:12.5px;color:#5A6675;margin:0 0 4px;}
+.doc-firma svg{display:block;margin:0 auto;}
+.trazo{stroke-dasharray:340;stroke-dashoffset:340;}
+.dentro .trazo{animation:firmar 1.7s ease .45s forwards;}
+@keyframes firmar{to{stroke-dashoffset:0;}}
+.doc-firma .sello{font-family:var(--dato);font-size:11px;color:#5A6675;}
+.doc-estado{
+  display:inline-block;background:var(--verde);color:#fff;
+  font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:1.2px;
+  padding:4px 11px;border-radius:5px;margin-top:14px;
+}
+
+/* ---------- cinta de oficios ---------- */
+.cinta{border-top:1px solid var(--borde);border-bottom:1px solid var(--borde);padding:19px 0;overflow:hidden;background:var(--fondo-2);}
+.cinta-pista{display:flex;gap:52px;width:max-content;animation:correr 34s linear infinite;}
+.cinta-pista span{
+  font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:2.4px;
+  color:rgba(232,238,244,.34);white-space:nowrap;
+}
+@keyframes correr{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ---------- secciones ---------- */
+.seccion{padding:96px 0;position:relative;}
+.seccion-alt{background:var(--fondo-2);}
+.rotulo{
+  font-family:var(--display);font-size:11.5px;font-weight:700;letter-spacing:2.6px;
+  color:var(--naranja);margin:0 0 14px;
+}
+.titular{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(29px,3.7vw,44px);letter-spacing:-1px;line-height:1.1;margin:0 0 16px;
+}
+.bajada{font-size:18.5px;color:var(--tenue);margin:0 0 50px;max-width:33em;}
+
+.rejilla-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.tarjeta{
+  background:rgba(255,255,255,.035);border:1px solid var(--borde);
+  border-radius:15px;padding:30px 26px;transition:border-color .25s,transform .25s,background .25s;
+}
+.tarjeta:hover{border-color:rgba(242,101,34,.45);transform:translateY(-4px);background:rgba(255,255,255,.055);}
+.icono{width:50px;height:50px;border-radius:13px;display:grid;place-items:center;margin-bottom:19px;}
+.tarjeta h3{font-family:var(--display);font-weight:700;font-size:14.5px;letter-spacing:1.7px;margin:0 0 9px;}
+.tarjeta p{margin:0;font-size:15.5px;color:var(--tenue);}
+
+/* onda del micrófono */
+.onda rect{animation:pulsar 1.25s ease-in-out infinite;transform-origin:center;}
+.onda rect:nth-child(2){animation-delay:.16s;}
+.onda rect:nth-child(3){animation-delay:.32s;}
+.onda rect:nth-child(4){animation-delay:.48s;}
+@keyframes pulsar{0%,100%{transform:scaleY(.35);}50%{transform:scaleY(1);}}
+
+/* obturador */
+.tarjeta:hover .obturador{animation:disparar .5s ease;}
+@keyframes disparar{50%{transform:scale(.62);}}
+
+/* cursor de texto */
+.cursor{animation:parpadeo 1.05s step-end infinite;}
+@keyframes parpadeo{50%{opacity:0;}}
+
+/* ---------- puente de idioma ---------- */
+.puente{display:grid;grid-template-columns:1fr auto 1fr;gap:26px;align-items:stretch;}
+.lado{
+  background:rgba(255,255,255,.04);border:1px solid var(--borde);
+  border-radius:15px;padding:28px;
+}
+.lado-cliente{border-color:rgba(242,101,34,.35);}
+.quien{
+  font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:1.9px;
+  color:var(--naranja);margin:0 0 12px;
+}
+.dice{font-size:18px;margin:0;line-height:1.45;}
+.flecha{display:grid;place-items:center;font-size:28px;color:var(--naranja);}
+.flecha span{animation:empujar 1.9s ease-in-out infinite;}
+@keyframes empujar{0%,100%{transform:translateX(0);}50%{transform:translateX(7px);}}
+
+/* ---------- catálogo ---------- */
+.dos-col{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;}
+.lista-marca{list-style:none;margin:0;padding:0;}
+.lista-marca li{
+  display:flex;gap:13px;align-items:flex-start;
+  padding:15px 0;border-bottom:1px solid var(--borde);font-size:16.5px;
+}
+.lista-marca li:last-child{border-bottom:0;}
+.tick{flex:0 0 auto;margin-top:4px;}
+
+.precio-muestra{
+  background:rgba(255,255,255,.04);border:1px solid var(--borde);border-radius:15px;padding:26px;
+}
+.precio-muestra .fila{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 0;border-bottom:1px solid var(--borde);
+}
+.precio-muestra .fila:last-child{border-bottom:0;}
+.precio-muestra .cosa{font-size:15.5px;}
+.precio-muestra .tuyo{font-family:var(--dato);font-size:15.5px;color:var(--naranja);}
+.precio-muestra .pie-nota{font-size:13.5px;color:var(--tenue);margin:16px 0 0;}
+
+/* ---------- planes ---------- */
+.rejilla-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:790px;}
+.plan{
+  background:rgba(255,255,255,.035);border:1px solid var(--borde);
+  border-radius:15px;padding:32px;position:relative;
+}
+.plan-pro{border:1.5px solid var(--naranja);background:rgba(242,101,34,.06);}
+.plan .nombre{font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:1.9px;margin:0 0 12px;}
+.plan .precio{font-family:var(--dato);font-weight:500;font-size:36px;color:#fff;margin:0 0 3px;}
+.plan .periodo{font-size:14px;color:var(--tenue);margin:0 0 20px;}
+.plan ul{list-style:none;margin:0;padding:0;}
+.plan li{display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;font-size:15.5px;}
+
+/* ---------- soporte + descarga ---------- */
+.caja{
+  background:rgba(255,255,255,.04);border:1px solid var(--borde);
+  border-left:3px solid var(--naranja);border-radius:13px;padding:28px 30px;max-width:620px;
+}
+.caja .correo{font-family:var(--dato);font-size:20px;display:inline-block;margin:7px 0 11px;}
+.caja p{margin:0 0 6px;}
+.caja .plazo{font-size:15px;color:var(--tenue);}
+
+.tiendas{display:flex;flex-wrap:wrap;gap:15px;}
+.tienda{
+  display:flex;align-items:center;gap:14px;
+  border:1.5px solid var(--borde-fuerte);border-radius:12px;padding:14px 24px;
+  text-decoration:none;color:#fff;min-width:225px;transition:border-color .2s,transform .18s,background .2s;
+}
+.tienda:hover{border-color:var(--naranja);transform:translateY(-3px);background:rgba(242,101,34,.07);}
+.tienda .cual{font-size:12px;color:var(--tenue);margin:0;line-height:1.3;}
+.tienda .donde{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.4px;margin:0;}
+
+.cierre{text-align:center;padding:104px 0;}
+.cierre .titular{margin-left:auto;margin-right:auto;}
+.cierre .bajada{margin-left:auto;margin-right:auto;text-align:center;}
+
+/* ---------- pie ---------- */
+.pie{background:#050F1A;border-top:1px solid var(--borde);padding:44px 0;font-size:14.5px;color:var(--tenue);}
+.pie .wrap{display:flex;flex-wrap:wrap;gap:13px 26px;align-items:center;}
+.pie a{color:#B9C7D4;text-decoration:none;}
+.pie a:hover{color:#fff;text-decoration:underline;}
+.pie .derechos{margin-left:auto;}
+
+/* ---------- adaptable ---------- */
+@media(max-width:940px){
+  .hero .wrap,.dos-col{grid-template-columns:1fr;gap:46px;}
+  .rejilla-3,.rejilla-2{grid-template-columns:1fr;}
+  .puente{grid-template-columns:1fr;gap:16px;}
+  .flecha{transform:rotate(90deg);}
+  .doc{transform:none;}
+  .seccion{padding:70px 0;}
+  .menu{display:none;}
+}
+@media(max-width:560px){
+  .hero{padding:60px 0 70px;}
+  .pie .derechos{margin-left:0;width:100%;}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{animation:none!important;transition:none!important;}
+  .sube{opacity:1;transform:none;}
+  .trazo{stroke-dashoffset:0;}
+}
 </style>
 </head>
 <body>
-<header>
+
+<nav class="barra">
   <div class="wrap">
-    <div class="brand">HALO<span>BRA</span></div>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: July 28, 2026</p>
+    <a class="marca" href="#">HALO<em>BRA</em></a>
+    <div class="menu">
+      <a href="#como" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
+      <a href="#idioma" data-es="Idioma" data-en="Language">Idioma</a>
+      <a href="#catalogo" data-es="Tus precios" data-en="Your prices">Tus precios</a>
+      <a href="#planes" data-es="Precio" data-en="Pricing">Precio</a>
+      <a href="#soporte" data-es="Soporte" data-en="Support">Soporte</a>
+    </div>
+    <div class="idioma" role="group" aria-label="Idioma / Language">
+      <button type="button" data-set="es" aria-pressed="true">ES</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="boton boton-primario boton-chico" href="#descargar" data-es="Descargar" data-en="Get the app">Descargar</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="plano" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sube">
+      <p class="cintillo">
+        <span class="punto" aria-hidden="true"></span>
+        <span data-es="ESPAÑOL E INGLÉS" data-en="SPANISH AND ENGLISH">ESPAÑOL E INGLÉS</span>
+      </p>
+      <h1>
+        <span data-es="Habla el trabajo." data-en="Speak the job.">Habla el trabajo.</span>
+        <span class="resalte" data-es="Entrega el presupuesto." data-en="Hand over the estimate.">Entrega el presupuesto.</span>
+      </h1>
+      <p class="entrada"
+         data-es="Dictas, tomas una foto o lo escribes. Halobra arma las partidas, aplica los precios de tu catálogo y saca un PDF que tu cliente firma en la pantalla."
+         data-en="Dictate it, photograph it, or type it. Halobra builds the line items, applies the prices from your own catalog, and produces a PDF your client signs on screen.">
+        Dictas, tomas una foto o lo escribes. Halobra arma las partidas, aplica los precios de tu catálogo y saca un PDF que tu cliente firma en la pantalla.
+      </p>
+      <div class="acciones">
+        <a class="boton boton-primario" href="#descargar" data-es="Descargar gratis" data-en="Get it free">Descargar gratis</a>
+        <a class="boton boton-borde" href="#como" data-es="Ver cómo funciona" data-en="See how it works">Ver cómo funciona</a>
+      </div>
+      <p class="acciones apunte" style="margin-top:16px;"
+         data-es="3 presupuestos gratis cada 30 días. Sin tarjeta."
+         data-en="3 free estimates every 30 days. No card required.">
+        3 presupuestos gratis cada 30 días. Sin tarjeta.
+      </p>
+    </div>
+
+    <div class="doc-zona sube" data-retraso="1">
+      <p class="doc-nota"
+         data-es="Tú dictaste en español.<br>Esto es lo que <strong>recibe tu cliente</strong>."
+         data-en="You dictated in English.<br>This is what <strong>your client receives</strong>.">
+        Tú dictaste en español.<br>Esto es lo que <strong>recibe tu cliente</strong>.
+      </p>
+      <article class="doc">
+        <div class="doc-cabeza">
+          <span class="titulo" data-es="PRESUPUESTO #1010" data-en="ESTIMATE #1010">PRESUPUESTO #1010</span>
+          <span class="pastilla" data-es="EN" data-en="ES">EN</span>
+        </div>
+        <div class="doc-cuerpo">
+          <p class="doc-obra" data-es="Room painting 150 sq ft" data-en="Pintura de cuarto 150 sq ft">Room painting 150 sq ft</p>
+
+          <div class="renglon">
+            <span class="que" data-es="Wall paint (latex)" data-en="Pintura para paredes (látex)">Wall paint (latex)
+              <span class="medida">3 gal &times; $49.49</span></span>
+            <span class="monto">$148.47</span>
+          </div>
+          <div class="renglon">
+            <span class="que" data-es="Surface preparation" data-en="Preparación de superficie">Surface preparation
+              <span class="medida">1.5 h &times; $56.25</span></span>
+            <span class="monto">$84.38</span>
+          </div>
+          <div class="renglon">
+            <span class="que" data-es="Paint application, two coats" data-en="Aplicación de pintura, dos manos">Paint application, two coats
+              <span class="medida">4 h &times; $56.25</span></span>
+            <span class="monto">$225.00</span>
+          </div>
+          <div class="renglon">
+            <span class="que" data-es="Final cleanup" data-en="Limpieza final">Final cleanup
+              <span class="medida">1 h &times; $56.25</span></span>
+            <span class="monto">$56.25</span>
+          </div>
+
+          <div class="doc-total">
+            <span class="etiqueta">TOTAL</span>
+            <span class="cifra">$529.22</span>
+          </div>
+
+          <div class="doc-firma">
+            <p class="pide"
+               data-es="Sign here to authorize the start of the project"
+               data-en="Firme aquí para autorizar el inicio del proyecto">Sign here to authorize the start of the project</p>
+            <svg width="122" height="48" viewBox="0 0 122 48" fill="none" aria-hidden="true">
+              <path class="trazo" d="M7 35C17 12 25 5 29 11c4 6-6 25-2 27 4 2 17-23 25-27 8-4 4 15 10 17 6 2 21-10 29-21 8-11 15-3 19 4"
+                    stroke="#1E2A38" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <span class="sello">8/16/2026</span>
+          </div>
+
+          <span class="doc-estado" data-es="FIRMADO" data-en="SIGNED">FIRMADO</span>
+        </div>
+      </article>
+    </div>
   </div>
 </header>
 
-<main>
-  <p class="intro">
-    Halobra ("we," "us," or "our") builds a mobile app that helps independent
-    contractors create professional estimates. This Privacy Policy explains what
-    information the Halobra app collects, how we use it, and the choices you have.
-    By using Halobra, you agree to the practices described here.
-  </p>
-
-  <div class="callout">
-    <strong>The short version:</strong> We collect the account and business
-    information you give us so the app can work. Voice recordings and photos you
-    provide are processed to build your estimate and are <strong>not stored</strong>
-    on our servers. We do not sell your data, we do not show ads, and we do not use
-    third-party analytics or tracking.
+<div class="cinta" aria-hidden="true">
+  <div class="cinta-pista">
+    <span>PINTURA</span><span>PLOMERÍA</span><span>ELÉCTRICO</span><span>TECHOS</span><span>PISOS</span>
+    <span>DRYWALL</span><span>CONCRETO</span><span>HVAC</span><span>REMODELACIÓN</span><span>JARDINERÍA</span>
+    <span>PINTURA</span><span>PLOMERÍA</span><span>ELÉCTRICO</span><span>TECHOS</span><span>PISOS</span>
+    <span>DRYWALL</span><span>CONCRETO</span><span>HVAC</span><span>REMODELACIÓN</span><span>JARDINERÍA</span>
   </div>
+</div>
 
-  <h2>1. Who this applies to</h2>
-  <p>
-    Halobra is intended for use by adults aged 18 and older. The app is designed for
-    professional contractors and is not directed to children. We do not knowingly
-    collect information from anyone under 18.
-  </p>
+<section class="seccion" id="como">
+  <div class="wrap">
+    <p class="rotulo sube" data-es="CÓMO EMPIEZAS" data-en="HOW YOU START">CÓMO EMPIEZAS</p>
+    <h2 class="titular sube" data-es="Tres maneras. Cualquiera basta." data-en="Three ways. Any one is enough.">Tres maneras. Cualquiera basta.</h2>
+    <p class="bajada sube"
+       data-es="No tienes que usar las tres. Elige la que te sirva en el momento: con las manos sucias, dentro del carro o sentado en la mesa."
+       data-en="You don't have to use all three. Pick whichever fits the moment: hands dirty, sitting in the truck, or at the kitchen table.">
+      No tienes que usar las tres. Elige la que te sirva en el momento: con las manos sucias, dentro del carro o sentado en la mesa.
+    </p>
 
-  <h2>2. Information we collect</h2>
+    <div class="rejilla-3">
+      <div class="tarjeta sube">
+        <div class="icono" style="background:rgba(242,101,34,.14);">
+          <svg class="onda" width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+            <rect x="4"  y="7" width="3" height="12" rx="1.5" fill="#F26522"/>
+            <rect x="10" y="4" width="3" height="18" rx="1.5" fill="#F26522"/>
+            <rect x="16" y="6" width="3" height="14" rx="1.5" fill="#F26522"/>
+            <rect x="22" y="9" width="3" height="8"  rx="1.5" fill="#F26522"/>
+          </svg>
+        </div>
+        <h3 data-es="VOZ" data-en="VOICE">VOZ</h3>
+        <p data-es="Describes el trabajo hablando, como se lo explicarías a tu ayudante. Halobra lo convierte en partidas."
+           data-en="Describe the job out loud, the way you'd explain it to your helper. Halobra turns it into line items.">
+          Describes el trabajo hablando, como se lo explicarías a tu ayudante. Halobra lo convierte en partidas.
+        </p>
+      </div>
 
-  <h3>Account and business information</h3>
-  <p>When you create an account and set up your profile, we collect:</p>
-  <ul>
-    <li>Your email address and password (used to sign in and secure your account).</li>
-    <li>Business details you choose to enter, such as your business name, phone number, and license number.</li>
-  </ul>
+      <div class="tarjeta sube" data-retraso="1">
+        <div class="icono" style="background:rgba(140,180,220,.14);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9EC2E0" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+            <path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L17 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <circle class="obturador" cx="12" cy="13" r="3.6" style="transform-origin:12px 13px;"/>
+          </svg>
+        </div>
+        <h3 data-es="FOTO" data-en="PHOTO">FOTO</h3>
+        <p data-es="Fotografías el área y ya está. Si quieres añadir una nota escrita puedes, pero no hace falta."
+           data-en="Photograph the area and that's it. Add a written note if you want to, but it isn't required.">
+          Fotografías el área y ya está. Si quieres añadir una nota escrita puedes, pero no hace falta.
+        </p>
+      </div>
 
-  <h3>Client and estimate information</h3>
-  <p>
-    When you create estimates, you may enter information about your clients (such as
-    name, phone number, and job address) and the details of the work. This
-    information is stored in your account so you can manage and share your estimates.
-  </p>
+      <div class="tarjeta sube" data-retraso="2">
+        <div class="icono" style="background:rgba(23,153,74,.16);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3FBF74" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h13M4 12h10M4 17h7"/>
+            <rect class="cursor" x="18.5" y="14.6" width="1.9" height="5" rx=".9" fill="#3FBF74" stroke="none"/>
+          </svg>
+        </div>
+        <h3 data-es="TEXTO" data-en="TEXT">TEXTO</h3>
+        <p data-es="Lo escribes en dos líneas. Si falta un dato, Halobra te lo pregunta antes de armar el presupuesto."
+           data-en="Type it in two lines. If something's missing, Halobra asks before building the estimate.">
+          Lo escribes en dos líneas. Si falta un dato, Halobra te lo pregunta antes de armar el presupuesto.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <h3>Voice recordings</h3>
-  <p>
-    If you dictate a job by voice, the audio is sent to our server, converted to text,
-    and used to generate your estimate. <strong>The audio recording itself is processed
-    in memory and is not saved</strong> to our servers or database. Only the resulting
-    text and estimate are kept in your account.
-  </p>
+<section class="seccion seccion-alt" id="idioma">
+  <div class="wrap">
+    <p class="rotulo sube" data-es="EL IDIOMA" data-en="THE LANGUAGE">EL IDIOMA</p>
+    <h2 class="titular sube" data-es="Trabajas en un idioma. Cobras en el otro." data-en="You work in one language. You get paid in the other.">Trabajas en un idioma. Cobras en el otro.</h2>
+    <p class="bajada sube"
+       data-es="El documento sale en el idioma de tu cliente sin que traduzcas nada a mano. Tú sigues trabajando como siempre."
+       data-en="The document comes out in your client's language without you translating a thing. You keep working the way you always have.">
+      El documento sale en el idioma de tu cliente sin que traduzcas nada a mano. Tú sigues trabajando como siempre.
+    </p>
 
-  <h3>Photos</h3>
-  <p>
-    If you take or select photos of a work area, those images are sent to our server
-    and analyzed to help generate your estimate. <strong>The photos are processed in
-    memory and are not stored</strong> on our servers or database after the estimate is
-    created.
-  </p>
+    <div class="puente">
+      <div class="lado sube">
+        <p class="quien" data-es="TÚ DICTAS" data-en="YOU DICTATE">TÚ DICTAS</p>
+        <p class="dice"
+           data-es="&laquo;Pintar un cuarto de ciento cincuenta pies, dos manos, techo de ocho pies.&raquo;"
+           data-en="&ldquo;Paint a 150 square foot room, two coats, eight foot ceiling.&rdquo;">
+          &laquo;Pintar un cuarto de ciento cincuenta pies, dos manos, techo de ocho pies.&raquo;
+        </p>
+      </div>
+      <div class="flecha sube" data-retraso="1" aria-hidden="true"><span>&rarr;</span></div>
+      <div class="lado lado-cliente sube" data-retraso="2">
+        <p class="quien" data-es="TU CLIENTE FIRMA" data-en="YOUR CLIENT SIGNS">TU CLIENTE FIRMA</p>
+        <p class="dice"
+           data-es="Room painting 150 sq ft &mdash; 6 partidas, términos y línea de firma. Total $529.22."
+           data-en="Pintura de cuarto 150 sq ft &mdash; 6 line items, terms, and a signature line. Total $529.22.">
+          Room painting 150 sq ft &mdash; 6 partidas, términos y línea de firma. Total $529.22.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <h3>Location</h3>
-  <p>
-    The current version of Halobra does not collect your location. A future version may
-    request location access to support features such as finding nearby suppliers (for
-    example, home improvement stores). If we add this, the app will ask for your
-    permission first, and you will be able to decline. We are including this notice in
-    advance for transparency.
-  </p>
+<section class="seccion" id="catalogo">
+  <div class="wrap dos-col">
+    <div>
+      <p class="rotulo sube" data-es="TUS PRECIOS" data-en="YOUR PRICES">TUS PRECIOS</p>
+      <h2 class="titular sube" data-es="La IA no inventa lo que cobras." data-en="The AI doesn't invent what you charge.">La IA no inventa lo que cobras.</h2>
+      <p class="bajada sube" style="margin-bottom:30px;"
+         data-es="Halobra reconoce el trabajo y lo desglosa en partidas. Los números salen de tu catálogo, el que tú configuraste."
+         data-en="Halobra recognizes the job and breaks it into line items. The numbers come from your catalog, the one you set up.">
+        Halobra reconoce el trabajo y lo desglosa en partidas. Los números salen de tu catálogo, el que tú configuraste.
+      </p>
+      <ul class="lista-marca sube" data-retraso="1">
+        <li><svg class="tick" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F26522" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+          <span data-es="Tu precio por hora de mano de obra" data-en="Your own hourly labor rate">Tu precio por hora de mano de obra</span></li>
+        <li><svg class="tick" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F26522" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+          <span data-es="Desperdicio de material configurable" data-en="Configurable material waste">Desperdicio de material configurable</span></li>
+        <li><svg class="tick" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F26522" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+          <span data-es="Markup sobre el costo, y te muestra el margen real" data-en="Markup over cost, with your real margin shown">Markup sobre el costo, y te muestra el margen real</span></li>
+        <li><svg class="tick" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F26522" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+          <span data-es="Editas cualquier partida antes de generar" data-en="Edit any line item before you generate">Editas cualquier partida antes de generar</span></li>
+      </ul>
+    </div>
 
-  <h2>3. How we use your information</h2>
-  <ul>
-    <li>To provide and operate the app — creating, pricing, and generating your estimates.</li>
-    <li>To let you sign in and keep your account secure.</li>
-    <li>To generate professional PDF documents you can share with your clients.</li>
-    <li>To respond to your requests and provide support.</li>
-  </ul>
-  <p>We do not use your information for advertising, and we do not sell it.</p>
+    <div class="precio-muestra sube" data-retraso="2">
+      <div class="fila"><span class="cosa" data-es="Mano de obra" data-en="Labor">Mano de obra</span><span class="tuyo">$45.00 / h</span></div>
+      <div class="fila"><span class="cosa" data-es="Desperdicio de material" data-en="Material waste">Desperdicio de material</span><span class="tuyo">10%</span></div>
+      <div class="fila"><span class="cosa" data-es="Markup sobre el costo" data-en="Markup over cost">Markup sobre el costo</span><span class="tuyo">25%</span></div>
+      <div class="fila"><span class="cosa" data-es="Margen real sobre la venta" data-en="Real margin on the sale">Margen real sobre la venta</span><span class="tuyo" style="color:#3FBF74;">20.0%</span></div>
+      <p class="pie-nota"
+         data-es="Markup 25% no es margen 25%. Halobra te lo aclara en pantalla para que no te confundas al cotizar."
+         data-en="A 25% markup is not a 25% margin. Halobra spells it out on screen so you don't miscalculate.">
+        Markup 25% no es margen 25%. Halobra te lo aclara en pantalla para que no te confundas al cotizar.
+      </p>
+    </div>
+  </div>
+</section>
 
-  <h2>4. Service providers</h2>
-  <p>
-    To operate the app, we rely on a small number of trusted third-party services that
-    process data on our behalf:
-  </p>
-  <ul>
-    <li><strong>Supabase</strong> — securely stores your account, client, and estimate data.</li>
-    <li><strong>Anthropic (Claude)</strong> — processes your dictated text and photos to extract the line items for your estimate.</li>
-    <li><strong>Railway</strong> — hosts our server infrastructure.</li>
-  </ul>
-  <p>
-    These providers are only permitted to use the information as needed to provide their
-    services to us. We share data with them solely to make the app function.
-  </p>
+<section class="seccion seccion-alt" id="planes">
+  <div class="wrap">
+    <p class="rotulo sube" data-es="PRECIO" data-en="PRICING">PRECIO</p>
+    <h2 class="titular sube" data-es="Empiezas gratis." data-en="Start free.">Empiezas gratis.</h2>
+    <p class="bajada sube"
+       data-es="Pruébalo con trabajos reales. Si te sirve, te suscribes. Cancelas cuando quieras desde tu teléfono."
+       data-en="Try it on real jobs. If it works for you, subscribe. Cancel anytime from your phone.">
+      Pruébalo con trabajos reales. Si te sirve, te suscribes. Cancelas cuando quieras desde tu teléfono.
+    </p>
 
-  <h2>5. What we do not do</h2>
-  <ul>
-    <li>We do not sell or rent your personal information.</li>
-    <li>We do not display advertising in the app.</li>
-    <li>We do not use third-party analytics, tracking, or advertising tools.</li>
-    <li>We do not store your voice recordings or photos after your estimate is generated.</li>
-  </ul>
+    <div class="rejilla-2">
+      <div class="plan sube">
+        <p class="nombre" data-es="GRATIS" data-en="FREE">GRATIS</p>
+        <p class="precio">$0</p>
+        <p class="periodo" data-es="para siempre" data-en="forever">para siempre</p>
+        <ul>
+          <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FA2B5" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+            <span data-es="3 presupuestos cada 30 días" data-en="3 estimates every 30 days">3 presupuestos cada 30 días</span></li>
+          <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FA2B5" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+            <span data-es="Voz, foto y texto" data-en="Voice, photo, and text">Voz, foto y texto</span></li>
+          <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FA2B5" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+            <span data-es="PDF bilingüe con firma" data-en="Bilingual PDF with signature">PDF bilingüe con firma</span></li>
+        </ul>
+      </div>
 
-  <h2>6. Data retention</h2>
-  <p>
-    We keep your account, client, and estimate information for as long as your account is
-    active. When you delete an item — such as an estimate or a client — it is removed from
-    your account. You may request deletion of your account at any time (see below), after
-    which your associated data is deleted.
-  </p>
+      <div class="plan plan-pro sube" data-retraso="1">
+        <p class="nombre" style="color:var(--naranja);">HALOBRA PRO</p>
+        <p class="precio">$14.99</p>
+        <p class="periodo" data-es="al mes" data-en="per month">al mes</p>
+        <ul>
+          <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F26522" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+            <span data-es="Presupuestos ilimitados" data-en="Unlimited estimates">Presupuestos ilimitados</span></li>
+          <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F26522" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+            <span data-es="Tu catálogo de precios completo" data-en="Your full price catalog">Tu catálogo de precios completo</span></li>
+          <li><svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F26522" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg>
+            <span data-es="Cancelas al instante" data-en="Cancel instantly">Cancelas al instante</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <h2>7. Your rights and choices</h2>
-  <ul>
-    <li><strong>Access and correction:</strong> You can view and update your profile and business information in the app.</li>
-    <li><strong>Deletion:</strong> You can delete your account from within the app, or by contacting us. Deleting your account removes your associated data.</li>
-    <li><strong>Permissions:</strong> You control microphone, camera, and photo access through your device settings, and can change these at any time.</li>
-  </ul>
+<section class="seccion" id="soporte">
+  <div class="wrap">
+    <p class="rotulo sube" data-es="SOPORTE" data-en="SUPPORT">SOPORTE</p>
+    <h2 class="titular sube" data-es="Contesta una persona." data-en="A person answers.">Contesta una persona.</h2>
+    <p class="bajada sube"
+       data-es="Escribes en español o en inglés, como prefieras."
+       data-en="Write in Spanish or English, whichever you prefer.">
+      Escribes en español o en inglés, como prefieras.
+    </p>
 
-  <h2>8. Security</h2>
-  <p>
-    We use industry-standard measures to protect your information, including encrypted
-    connections (HTTPS) and secure storage of your session on your device. No method of
-    transmission or storage is completely secure, but we work to protect your data.
-  </p>
+    <div class="caja sube">
+      <p data-es="¿Algo no funciona o tienes una pregunta?" data-en="Something not working, or have a question?">¿Algo no funciona o tienes una pregunta?</p>
+      <a class="correo" href="mailto:soporte@halobra.com">soporte@halobra.com</a>
+      <p class="plazo"
+         data-es="Contestamos en menos de 24 horas, de lunes a viernes."
+         data-en="We reply within 24 hours, Monday through Friday.">
+        Contestamos en menos de 24 horas, de lunes a viernes.
+      </p>
+    </div>
+  </div>
+</section>
 
-  <h2>9. Changes to this policy</h2>
-  <p>
-    We may update this Privacy Policy from time to time. When we do, we will revise the
-    "Last updated" date at the top of this page. We encourage you to review this policy
-    periodically.
-  </p>
+<section class="seccion seccion-alt cierre" id="descargar">
+  <div class="wrap">
+    <h2 class="titular sube" data-es="Tu próximo presupuesto en cinco minutos." data-en="Your next estimate in five minutes.">Tu próximo presupuesto en cinco minutos.</h2>
+    <p class="bajada sube"
+       data-es="Descarga Halobra, dicta el primer trabajo y mira lo que sale."
+       data-en="Download Halobra, dictate your first job, and see what comes out.">
+      Descarga Halobra, dicta el primer trabajo y mira lo que sale.
+    </p>
 
-  <h2>10. Contact us</h2>
-  <p>
-    If you have questions about this Privacy Policy or your data, contact us at:
-    <br>
-    <a href="mailto:privacy@halobra.com">privacy@halobra.com</a>
-  </p>
-</main>
+    <div class="tiendas sube" data-retraso="1" style="justify-content:center;">
+      <a class="tienda" href="https://apps.apple.com/us/app/id6795651696">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+          <path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.6 2.3 2.8 2.3 1.1 0 1.6-.7 2.9-.7 1.3 0 1.7.7 2.9.7 1.2 0 2-1.1 2.7-2.2.9-1.2 1.2-2.5 1.2-2.5s-2.4-.9-2.4-3.7zM14.2 5.6c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.9 1 .1 2-.5 2.7-1.3z"/>
+        </svg>
+        <span>
+          <p class="cual" data-es="Descárgala en" data-en="Download on the">Descárgala en</p>
+          <p class="donde">App Store</p>
+        </span>
+      </a>
+      <a class="tienda" href="https://play.google.com/store/apps/details?id=com.ariasdev.obra">
+        <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1 9.3-9.3v-.2L3.7 2.2z" fill="#fff" opacity=".9"/>
+          <path d="M16.1 15.6l-3.1-3.1v-.2l3.1-3.1.1.1 3.7 2.1c1 .6 1 1.6 0 2.2z" fill="#F26522"/>
+          <path d="M16.2 15.5L13 12.3 3.6 21.7c.4.4 1 .4 1.7.1z" fill="#fff" opacity=".55"/>
+          <path d="M16.2 9.1L5.3 2.9c-.7-.4-1.3-.3-1.7.1L13 12.3z" fill="#fff" opacity=".75"/>
+        </svg>
+        <span>
+          <p class="cual" data-es="Disponible en" data-en="Get it on">Disponible en</p>
+          <p class="donde">Google Play</p>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
 
-<footer>
-  <span class="brand">Halobra</span> — Estimates for contractors.<br>
-  &copy; 2026 Halobra. All rights reserved.
+<footer class="pie">
+  <div class="wrap">
+    <a href="privacy.html" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+    <a href="terms.html" data-es="Términos" data-en="Terms">Términos</a>
+    <a href="eliminar-cuenta.html" data-es="Eliminar cuenta" data-en="Delete account">Eliminar cuenta</a>
+    <a href="mailto:soporte@halobra.com">soporte@halobra.com</a>
+    <span class="derechos">&copy; 2026 Arias</span>
+  </div>
 </footer>
+
+<script>
+(function(){
+  /* --- idioma --- */
+  var nodos=document.querySelectorAll('[data-es][data-en]');
+  var botones=document.querySelectorAll('.idioma button');
+
+  function aplicar(idioma){
+    document.documentElement.lang=idioma;
+    nodos.forEach(function(n){ n.innerHTML=n.getAttribute('data-'+idioma); });
+    botones.forEach(function(b){ b.setAttribute('aria-pressed',String(b.dataset.set===idioma)); });
+    try{ localStorage.setItem('halobra-idioma',idioma); }catch(e){}
+  }
+
+  var guardado=null;
+  try{ guardado=localStorage.getItem('halobra-idioma'); }catch(e){}
+  aplicar(guardado || ((navigator.language||'es').toLowerCase().indexOf('en')===0 ? 'en' : 'es'));
+
+  botones.forEach(function(b){
+    b.addEventListener('click',function(){ aplicar(b.dataset.set); });
+  });
+
+  /* --- aparecer al hacer scroll --- */
+  var piezas=document.querySelectorAll('.sube');
+  if(!('IntersectionObserver' in window)){
+    piezas.forEach(function(p){ p.classList.add('dentro'); });
+    return;
+  }
+  var vigia=new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('dentro'); vigia.unobserve(e.target); }
+    });
+  },{threshold:.14,rootMargin:'0px 0px -60px 0px'});
+  piezas.forEach(function(p){ vigia.observe(p); });
+})();
+</script>
+
 </body>
 </html>
